@@ -7,5 +7,14 @@ const getImage = async function() {
     const res = await fetch('https://picsum.photos/v2/list?limit=100');
     const images = await res.json();
     console.log(images);
+    selectRandomImage(images);
 }; 
 getImage();
+
+const selectRandomImage = function (images) {
+    let randomIndex = Math.floor(Math.random() * images.length);
+    // console.log(randomIndex);
+    let randomImage = images[randomIndex];
+    console.log(randomImage);
+    
+}
